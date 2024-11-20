@@ -1,19 +1,11 @@
 # Curso de Desarrollo Web con Flutter
 
-## Requisitos Previos
-
-### Conocimientos Básicos
-
-1. Uso básico de computadora y navegador web.
-2. Conocimientos básicos sobre qué es una aplicación web (opcional).
-3. Familiaridad básica con comandos en la terminal (opcional).
-
 ### Herramientas Necesarias
 
 1. **Computadora con conexión a internet:**
    - Sistema operativo: Windows, macOS, o Linux.
    - Procesador básico o intermedio.
-   - Espacio en disco: Al menos 2 GB libres.
+   - Espacio en disco: Al menos 5 GB libres.
 
 2. **Navegador recomendado:**
    - Google Chrome (para probar las aplicaciones web).
@@ -45,8 +37,7 @@
    - Asegúrate de seguir las instrucciones específicas para tu sistema operativo.
 
 2. **Archivos base del curso:**
-   - Clona o descarga el repositorio del curso en GitHub:
-     [Descargar aquí](https://github.com/usuario/repositorio-curso-flutter-web)
+   - Clona o descarga este repositorio del curso:
 
 3. **Configuración inicial de Supabase:**
    - Crea un proyecto en Supabase.
@@ -82,15 +73,9 @@
    - [Dart Documentation](https://dart.dev/guides) - Documentación oficial de Dart.
    - [Supabase Docs](https://supabase.com/docs) - Documentación oficial de Supabase.
 
-4. **Comunidades y recursos:**
-   - [Flutter Community](https://flutter.dev/community) - Encuentra soporte y tutoriales.
-   - [Stack Overflow](https://stackoverflow.com/questions/tagged/flutter) - Foro para resolver dudas técnicas.
-
 ---
 
 ## Contacto
 
 Si tienes dudas antes o durante el curso, puedes contactarme en:
 - **Correo:** nugetdepatto.stay@gmail.com
-
-¡Nos vemos en el curso! 🚀
