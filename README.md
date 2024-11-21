@@ -5,7 +5,7 @@
 1. **Computadora con conexión a internet:**
    - Sistema operativo: Windows, macOS, o Linux.
    - Procesador básico o intermedio.
-   - Espacio en disco: Al menos 5 GB libres.
+   - Espacio en disco: Al menos 10 GB libres.
 
 2. **Navegador recomendado:**
    - Google Chrome (para probar las aplicaciones web).
@@ -34,10 +34,10 @@
 1. **Flutter SDK:**
    - Descárgalo desde la página oficial:  
      [Descargar Flutter SDK](https://docs.flutter.dev/get-started/install)
-   - Asegúrate de seguir las instrucciones específicas para tu sistema operativo.
+   - Asegúrate de seguir las instrucciones específicas para tu sistema operativo para web.
 
 2. **Archivos base del curso:**
-   - Clona o descarga este repositorio del curso:
+   - Clona o descarga este repositorio del curso.
 
 3. **Configuración inicial de Supabase:**
    - Crea un proyecto en Supabase.
