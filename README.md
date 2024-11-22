@@ -1,5 +1,10 @@
 # Curso de Desarrollo Web con Flutter
 
+### NOTAS FINALES DEL TALLER
+Entren al proyecto y les aprecera varias carpetas, las importantes que tienen el codigo son:
+- **diseño_chill**: este tiene el diseño que les mostre al final
+- **diseño_no_chill**: es el que se vio durante el taller
+
 ### Herramientas Necesarias
 
 1. **Computadora con conexión a internet:**
