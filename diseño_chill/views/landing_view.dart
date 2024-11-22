@@ -1,4 +1,4 @@
-import 'package:curso_flutter_web/controllers/note_controller.dart';
+import '../controllers/note_controller.dart';
 import 'package:flutter/material.dart';
 
 class LandingView extends StatefulWidget {
