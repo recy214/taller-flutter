@@ -16,6 +16,8 @@
    - Extensiones necesarias para VS Code:
      - [Flutter](https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter)
      - [Dart](https://marketplace.visualstudio.com/items?itemName=Dart-Code.dart-code)
+     - [Flutter Widget Snippets](https://marketplace.visualstudio.com/items?itemName=alexisvt.flutter-snippets)
+     - [Awesome Flutter Snippets](https://marketplace.visualstudio.com/items?itemName=Nash.awesome-flutter-snippets)
 
 4. **Entorno de desarrollo local:**
    - [Flutter SDK](https://docs.flutter.dev/get-started/install) instalado y configurado.
