@@ -1,81 +1,153 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(const MyApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
+      title: 'Flutter Visual UI',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-        textTheme: GoogleFonts.anaheimTextTheme(),
+        textTheme: GoogleFonts.latoTextTheme(),
+        primarySwatch: Colors.blue,
       ),
-      home: Scaffold(
-        body: Row(
+      home: const SideHustleScreen(),
+    );
+  }
+}
+
+class SideHustleScreen extends StatelessWidget {
+  const SideHustleScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        title: const Row(
           children: [
-            Column(
-              //mainaxis alinea verticalmente
-              // mainAxisAlignment: MainAxisAlignment.center,
-              //crossaxis alinea horizontalmente
-              crossAxisAlignment: CrossAxisAlignment.start,
+            Text(
+              'Side Hustle',
+              style: TextStyle(color: Colors.black, fontSize: 18),
+            ),
+            Icon(Icons.arrow_drop_down, color: Colors.black),
+            Spacer(),
+            Row(
               children: [
-                botton(Icons.book, 'Projects', () {}),
-                botton(Icons.draw, 'Draft', () {}),
-                botton(Icons.switch_access_shortcut_outlined, 'Shared whit me',
-                    () {}),
-                const Spacer(),
-                botton(Icons.settings, 'Settings', () {}),
-                botton(Icons.people, 'Invite members', () {}),
-                botton(Icons.add, 'New Draft', () {}),
-                botton(Icons.add, 'New Project', () {}),
+                Icon(Icons.share, color: Colors.black, size: 18),
+                SizedBox(width: 8),
+                Text(
+                  'Share',
+                  style: TextStyle(color: Colors.black, fontSize: 12),
+                ),
+                SizedBox(width: 16),
+                Icon(Icons.more_horiz, color: Colors.black),
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
+          ],
+        ),
+        centerTitle: false,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                botonConIcono(
+                  label: 'Projects',
+                  icon: FontAwesomeIcons.folderOpen,
+                  onTap: () {},
+                ),
+                botonConIcono(
+                  label: 'Drafts',
+                  icon: FontAwesomeIcons.fileAlt,
+                  onTap: () {},
+                ),
+                botonConIcono(
+                  label: 'Shared With Me',
+                  icon: FontAwesomeIcons.users,
+                  onTap: () {},
+                ),
+                const Spacer(),
+                botonConIcono(
+                  label: 'Settings',
+                  icon: FontAwesomeIcons.cogs,
+                  onTap: () {},
+                ),
+                botonConIcono(
+                  label: 'Invite Members',
+                  icon: FontAwesomeIcons.userPlus,
+                  onTap: () {},
+                ),
+                const SizedBox(height: 16),
+                botonConIcono(
+                  label: 'New Draft',
+                  icon: FontAwesomeIcons.plus,
+                  onTap: () {},
+                ),
+                botonConIcono(
+                  label: 'New Project',
+                  icon: FontAwesomeIcons.plusCircle,
+                  onTap: () {},
+                ),
+              ],
+            ),
+            const SizedBox(width: 16),
+            const Expanded(
               child: Column(
                 children: [
-                  const Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        'Side Hustle',
-                        style: TextStyle(
-                          fontSize: 35,
-                        ),
-                      ),
-                      SizedBox(width: 20),
-                      Icon(
-                        Icons.keyboard_arrow_down_rounded,
-                        size: 35,
-                      ),
-                      SizedBox(width: 800),
-                      Icon(Icons.link),
-                      SizedBox(width: 20),
-                      Text('Share'),
-                      SizedBox(width: 20),
-                      Icon(Icons.more_vert),
-                      //
-                    ],
-                  ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    mainAxisSize: MainAxisSize.max,
                     children: [
-                      nota(),
-                      const SizedBox(width: 40),
-                      nota(),
-                      const SizedBox(width: 40),
-                      nota(),
-                      const SizedBox(width: 40),
-                      nota(),
+                      _CategoryCard(
+                        title: 'Ideas',
+                        color: Colors.blue,
+                        items: [
+                          'Design Moodboard',
+                          'Product Ideas',
+                          'Feature Ideas',
+                          'Research Findings',
+                        ],
+                      ),
+                      SizedBox(width: 16),
+                      _CategoryCard(
+                        title: 'Features / Work in Progress',
+                        color: Colors.green,
+                        items: [
+                          'API Design',
+                          'Hi-Fi Prototypes',
+                          'Edge Case Designs',
+                        ],
+                      ),
+                      SizedBox(width: 16),
+                      _CategoryCard(
+                        title: 'Done',
+                        color: Colors.orange,
+                        items: [
+                          'Information Architecture',
+                          'Code Convention',
+                          'Competitor Analysis',
+                          'Wireframes',
+                        ],
+                      ),
+                      SizedBox(width: 16),
+                      _CategoryCard(
+                        title: 'Goals',
+                        color: Colors.red,
+                        items: [
+                          'MVP',
+                          'Launch Plans',
+                        ],
+                      ),
                     ],
                   ),
                 ],
@@ -87,86 +159,84 @@ class MainApp extends StatelessWidget {
     );
   }
 
-  nota() {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.grey[200],
-        borderRadius: BorderRadius.circular(10),
-      ),
-      padding: const EdgeInsets.all(20),
-      height: 300,
-      width: 200,
-      child: Column(
-        // crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            // mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Container(
-                height: 15,
-                width: 15,
-                decoration: const BoxDecoration(
-                  color: Colors.red,
-                  shape: BoxShape.circle,
-                ),
-              ),
-              const SizedBox(width: 10),
-              const Text('Titulo x'),
-            ],
-          ),
-          const SizedBox(height: 20),
-          const Expanded(
-            child: SingleChildScrollView(
-              child: Padding(
-                padding: EdgeInsets.all(20.0),
-                child: Text(
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec odio nec nisl sodales fermentum. Nullam nec nisl sodales, fermentum nisl nec, fermentum nisl. Nullam nec nisl sodales, fermentum nisl nec, fermentum nisl.'),
-              ),
+  Widget botonConIcono({
+    required String label,
+    required IconData icon,
+    required VoidCallback onTap,
+  }) {
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(8.0),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8.0),
+        child: Row(
+          children: [
+            Icon(icon, color: Colors.grey, size: 20),
+            const SizedBox(width: 8),
+            Text(
+              label,
+              style: const TextStyle(fontSize: 16, color: Colors.black),
             ),
-          ),
-          const SizedBox(height: 20),
-          Row(
-            children: [
-              Expanded(
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                    backgroundColor: WidgetStateProperty.all(Colors.grey[100]),
-                    shape: WidgetStateProperty.all(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                  ),
-                  child: Text(
-                    'Edit',
-                    style: TextStyle(
-                      color: Colors.grey[700],
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
+}
 
-  InkWell botton(IconData icon, String text, Function onPressed) {
-    return InkWell(
-      onTap: () {
-        onPressed();
-        print(text);
-      },
-      child: Container(
-        padding: const EdgeInsets.all(20),
-        child: Row(
-          children: [
-            Icon(icon),
-            const SizedBox(width: 10),
-            Text(text),
-          ],
+class _CategoryCard extends StatelessWidget {
+  final String title;
+  final List<String> items;
+  final Color color;
+
+  const _CategoryCard({
+    required this.title,
+    required this.items,
+    required this.color,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Card(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Título con círculo de color
+              Row(
+                children: [
+                  CircleAvatar(radius: 5, backgroundColor: color),
+                  const SizedBox(width: 8),
+                  Text(
+                    title,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8),
+              ...items.map((item) => Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 4.0),
+                    child: Text(item),
+                  )),
+              const SizedBox(height: 8),
+              InkWell(
+                onTap: () {},
+                borderRadius: BorderRadius.circular(8.0),
+                child: const Text(
+                  'Editar',
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 163, 164, 165),
+                    fontSize: 14,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
